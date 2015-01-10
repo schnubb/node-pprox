@@ -1,6 +1,6 @@
 {
   "name": "node-pprox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Virtual Host Manager for multiple Node-WebApps",
   "main": "index.js",
   "scripts": {
