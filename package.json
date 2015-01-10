@@ -1,0 +1,23 @@
+{
+  "name": "node-pprox",
+  "version": "0.0.1",
+  "description": "Virtual Host Manager for multiple Node-WebApps",
+  "main": "index.js",
+  "scripts": {
+	"start" : "npm start",
+	"test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+  },
+  "repository": "https://github.com/schnubb/node-pprox",
+  "keywords": [
+    "Node.js",
+    "Proxy",
+    "Port"
+  ],
+  "author": "schnubb",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "private" : true,
+  "dependencies": {
+      "http-proxy": "~1.0.0"
+  }
+}
