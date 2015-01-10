@@ -1,6 +1,7 @@
-var fs = require('fs'),
-	dir = __dirname + '/',
-	filename = 'data.txt';
+var fs 			= require('fs')
+,	path		= require('path')
+,	dir 		= __dirname + '/'
+,	filename 	= 'data.txt';
 
 parseDomains = function(data){
 	var trial = data.split(':');
@@ -9,9 +10,9 @@ parseDomains = function(data){
 }
 
 exports.init = function(cb) {
-	fs.readFile(dir+filename, function(e, content){
+	fs.readFile( path.join(dir, filename), function(e, content){
 		var domains = content.toString().split('\n'),
-			proxData=[];
+		proxData=[];
 		if(domains[(domains.length-1)] === '') domains.pop();
 		if(parseDomains(domains[0])) {
 			domains.forEach(function(data) {
