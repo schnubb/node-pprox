@@ -14,8 +14,7 @@ startProx = function(config) {
 		}, function(e){
 			res.writeHead(404, { 'Content-Type' : 'text/plain' });
 			res.end('Requested Application not Found or Active.');
-			console.log(config, config[req.headers.host], req.headers.host);
-			console.log(req.headers.host + ':' + config[req.headers.host] + " :: " + e.code);
+			console.error(req.headers.host + ':' + config[req.headers.host] + " :: " + e.code);
 		});
 	}).listen(80);
 
