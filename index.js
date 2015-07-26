@@ -1,6 +1,6 @@
-var http 			= require("http")
+var 	http 			= require("http")
 ,	path			= require('path')
-,	vHostsLoader 	= require("./app/application-src")
+,	vHostsLoader 		= require("./app/application-src")
 ,	proxy 			= require("http-proxy").createProxyServer({})
 ,	dir 			= __dirname
 ,	filename 		= 'data.txt'
@@ -17,11 +17,13 @@ startProx = function(config) {
 			console.error(req.headers.host + ':' + config[req.headers.host] + " :: " + e.code);
 		});
 	}).listen(80);
-
+	
 	server.on('error', function(e) {
 		if (e.code == 'EADDRINUSE') {
 			console.log('Address in use... quitting');
 			server.close();
+		} else {
+			console.log(e);
 		}
 	})
 }
