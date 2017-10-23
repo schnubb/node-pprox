@@ -1,4 +1,4 @@
-var http        = require('http')
+const http        = require('http')
 , path          = require('path')
 , vHostsLoader  = require('./app/application-src')
 , proxy         = require('http-proxy').createProxyServer({})
@@ -7,7 +7,7 @@ var http        = require('http')
 ;
 
 startProx = function(config) {
-  var server = http.createServer( function(req, res) {
+  const server = http.createServer( function(req, res) {
     proxy.web( req, res, {
     target: 'http://127.0.0.1:' + config[req.headers.host] + '/',
     ws:true
@@ -19,7 +19,7 @@ startProx = function(config) {
   }).listen(80);
 
   server.on('error', function(e) {
-    if (e.code == 'EADDRINUSE') {
+    if (e.code === 'EADDRINUSE') {
       console.log('Address in use... quitting');
       server.close();
     } else {
